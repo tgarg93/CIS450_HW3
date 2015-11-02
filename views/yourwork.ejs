@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CIS 450/550 Homework3</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link rel='stylesheet' href='/stylesheets/bootstrap.min.css'>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="/">CIS450/550</a>
+	    </div>
+	    <div>
+	      <ul class="nav navbar-nav">
+	        <li><a href="/">Home</a></li>
+	        <li class="active"><a href="/sample">Sample Work</a></li>
+	        <li><a href="/yourwork">Your Work</a></li> 
+	        <li><a href="/references">References</a></li> 
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+		<form role="query_form" id ="query_form" method="get" action="/query">
+			<div class="form-group">
+	  			<label for="days">Days</label>
+	  				<select class="form-control" name = "days">
+		    			<option>Monday</option>
+					    <option>Tuesday</option>
+		    			<option>Wednesday</option>
+		    			<option>Thursday</option>
+		    			<option>Friday</option>
+		    			<option>Saturday</option>
+		    			<option>Sunday</option>
+	  				</select>
+	  			<label for="hours">Hours</label>
+	  				<select class="form-control" name = "hours">
+		    			<option>00:00 - 01:00</option>
+					    <option>01:00 - 02:00</option>
+					    <option>02:00 - 03:00</option>
+					    <option>03:00 - 04:00</option>
+					    <option>04:00 - 05:00</option>
+					    <option>05:00 - 06:00</option>
+					    <option>06:00 - 07:00</option>
+					    <option>07:00 - 08:00</option>
+					    <option>08:00 - 09:00</option>
+					    <option>09:00 - 10:00</option>
+					    <option>10:00 - 11:00</option>
+					    <option>11:00 - 12:00</option>
+					    <option>12:00 - 13:00</option>
+					    <option>13:00 - 14:00</option>
+					    <option>14:00 - 15:00</option>
+					    <option>15:00 - 16:00</option>
+					    <option>16:00 - 17:00</option>
+					    <option>17:00 - 18:00</option>
+					    <option>18:00 - 19:00</option>
+					    <option>19:00 - 20:00</option>
+					    <option>20:00 - 21:00</option>
+					    <option>21:00 - 22:00</option>
+					    <option>22:00 - 23:00</option>
+					    <option>23:00 - 24:00</option>
+	  				</select>
+			</div>
+			<button id="query" class="btn btn-success" type ="submit">Query</button>
+		</form>
+		<br>
+		<% if (results != null) { %>
+			<% for(var i = 0; i < results.length; i++) { %>
+						<p><%= results[i] %></p>
+			<% } %>
+		<% } %>
+  </body>
+</html>
